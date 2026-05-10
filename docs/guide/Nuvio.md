@@ -20,8 +20,6 @@ If you are a beginner and want to set up **Nuvio** from scratch, skip the **🚀
 
 If you don't want to follow the full setup above and only need the files, images, collections, or ready-made templates, this section is for you.
 
-I maintain a collection repository with the assets used for the **Nuvio Perfect Collections** setup. You can find everything [**here**](https://github.com/luckynumb3rs/stremio-perfect-setup/tree/main/collections).
-
 This includes:
    * title logos, 
    * cover and focused images, 
