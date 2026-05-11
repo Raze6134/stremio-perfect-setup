@@ -144,18 +144,18 @@ Now let's add the collections pack that organizes the installed *AIOMetadata* ca
 
 Lastly, open the **Nuvio** app and adjust a few settings to make the setup behave properly:
 
-1. Go to the **Addons** tab.
-2. Enable the **Follow Addon Order** toggle.
+1. Open the **Addons** tab.
+2. Go to **Reorder home catalogs** and enable the **Follow addons order** toggle.
    * *This keeps the catalog order consistent with the order configured in the addons for them, avoiding any confusion.*
 3. Go to **Settings**.
 4. Go to the **Trakt** tab and follow the steps to integrate your Trakt account.
    * *This is recommended if you want watch history, progress, and recommendations to work better across the setup. If you do not use Trakt, you can skip this, but some personalization features may be less useful.*
-5. Go to **Layout** and enable the **Prefer External Metadata** toggle.
+5. Go to **Layout**, **Detail Page**, and enable the **Prefer meta from external addon** toggle.
    * *This tells Nuvio to prefer the metadata coming from your external metadata addon, which in this setup is AIOMetadata.*
 6. Go to **Integrations**, then **TMDB**.
-7. Enter your **TMDB API key**.
-8. Enable all toggles in the **TMDB** integration section.
+7. Enable all toggles in the **TMDB** integration section.
    * *This helps Nuvio use all TMDB-related features across the interface.*
+8. Configure the rest of the settings however you like.
 
 That's it! If everything was added in the right order and the settings were enabled correctly, you should now have a perfect **Nuvio** setup. Enjoy 😊
 
