@@ -5,6 +5,8 @@ title: "🧹 5. Configuration [Install & Clean-Up]"
 
 # 🧹 5. Configuration [Install & Clean-Up]
 
+For *Stremio* proceed directly [below](#️-stremio), for *Nuvio* scroll further [down](#-nuvio).
+
 ## **🎞️ Stremio**
 
 Cinebye is the addon order and patch management layer for Stremio. It lets you apply cleanup patches and control addon priority so AIOMetadata and AIOStreams are used in the right order.
