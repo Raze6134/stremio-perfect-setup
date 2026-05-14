@@ -47,7 +47,7 @@ Go to [**this**](https://cinebye.elfhosted.com/) **Cinebye** instance and:
 ---
 ## **🚀 Nuvio**
 
-1. **Install Addons**: Once you have the Manifest URLs ready, go back to Nuvio in your browser:
+1. **Install Addons**: Once you have the Manifest URLs ready, go back to Nuvio in your browser.
    1. Open [**nuvioapp.space**](https://nuvioapp.space/).
    2. Go to your **Account** section.
    3. If you have more than one profile, make sure the profile you want to configure is selected from the top header menu.
@@ -71,7 +71,7 @@ Go to [**this**](https://cinebye.elfhosted.com/) **Cinebye** instance and:
    12. **For 🌐 HTTP Users**: Go [**here**](https://nuvio-plugin-library.vercel.app/) to choose the *Plugins* that are suitable for you and to learn how to install them on Nuvio.
       * *In addition to supporting Stremio addons, such as **AIOStreams** you installed above, which also includes HTTP sources that are properly filtered and formatted, Nuvio also supports **Plugins**, which can provide many additional HTTP sources. They don't go through AIOStreams unfortunately, so you won't get the optimized sources list like that addon does, but you would get additional stream sources. This is not necessary if you go for the **P2P** or **Debrid** configuration on AIOStreams above, but recommended for **HTTP** if you notice you are not getting enough streams from it.*
 
-2. **Collections Pack**: Now let's add the collections pack with *Dynamic Backdrops*, as described in [**🚀 Nuvio**](Nuvio.md), that organizes the installed *AIOMetadata* catalogs together into the groups described in [**🔎 AIOMetadata**](4-AIOMetadata.md):
+2. **Collections Pack**: Now let's add the collections pack with *Dynamic Backdrops*, as described in [**🚀 Nuvio**](Nuvio.md), that organizes the installed *AIOMetadata* catalogs together into the groups described in [**🔎 AIOMetadata**](4-AIOMetadata.md).
    1. Go to [**this**](https://nuvioapp.space/community-collections/nuvio-perfect-collections-incl-dynamic-backdrops-2) **Nuvio Collections Pack**.
    2. Click **Add Pack**.
    3. Make sure the correct profile is selected.
@@ -83,7 +83,7 @@ Go to [**this**](https://cinebye.elfhosted.com/) **Cinebye** instance and:
    5. Click **Add Pack**/**Merge Pack**/**Replace Profile**, depending on the mode you selected.
       * *The exact button name may change depending on the install mode.*
 
-3. **App Settings**: Lastly, open the **Nuvio** app and adjust a few settings to make the setup behave properly:
+3. **App Settings**: Lastly, open the **Nuvio** app and adjust a few settings to make the setup behave properly.
    1. Open the **Addons** tab.
    2. Go to **Reorder home catalogs** and enable the **Follow addons order** toggle.
       * *This keeps the catalog order consistent with the order configured in the addons for them, avoiding any confusion.*
