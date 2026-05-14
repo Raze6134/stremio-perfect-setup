@@ -1,6 +1,23 @@
 (function () {
-  var pages = Array.isArray(window.DOCS_PAGES) ? window.DOCS_PAGES.slice() : [];
-  var currentPath = window.CURRENT_PATH || "";
+  var docsData = document.getElementById("docs-data");
+  var pages = [];
+  var currentPath = "";
+  var homeUrl = "/";
+
+  if (docsData) {
+    try {
+      var parsed = JSON.parse(docsData.textContent || "{}");
+      currentPath = parsed.currentPath || "";
+      homeUrl = parsed.homeUrl || "/";
+      pages = Array.isArray(parsed.pages) ? parsed.pages : [];
+    } catch (_) {}
+  }
+
+  if (!pages.length && !currentPath && homeUrl === "/") {
+    pages = Array.isArray(window.DOCS_PAGES) ? window.DOCS_PAGES.slice() : [];
+    currentPath = window.CURRENT_PATH || "";
+    homeUrl = window.HOME_URL || "/";
+  }
 
   function normalizePath(path) {
     return String(path || "").replace(/^\/+|\/+$/g, "");
@@ -120,7 +137,7 @@
 
     var home = document.createElement("a");
     home.className = "nav-link";
-    home.href = window.HOME_URL || "/";
+    home.href = homeUrl;
     home.textContent = "🎬 Home";
 
     if (normalizePath(currentPath) === "index.md" || normalizePath(currentPath) === "") {

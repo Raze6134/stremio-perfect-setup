@@ -57,24 +57,26 @@
     </main>
   </div>
 
-  <script>
-    window.HOME_URL = {{ '/' | relative_url | jsonify }};
-    window.DOCS_PAGES = [
-      {% assign all_pages = site.pages | sort: 'path' %}
-      {% assign first_guide = true %}
-      {% for p in all_pages %}
-      {% if p.path contains 'guide/' and p.path contains '.md' %}
-      {% unless first_guide %},{% endunless %}
-      {
-        "path": {{ p.path | jsonify }},
-        "url": {{ p.url | relative_url | jsonify }},
-        "title": {{ p.title | default: p.name | replace: '.md', '' | jsonify }}
-      }
-      {% assign first_guide = false %}
-      {% endif %}
-      {% endfor %}
-    ];
-    window.CURRENT_PATH = {{ page.path | jsonify }};
+  <script id="docs-data" type="application/json">
+    {
+      "homeUrl": {{ '/' | relative_url | jsonify }},
+      "currentPath": {{ page.path | jsonify }},
+      "pages": [
+        {% assign all_pages = site.pages | sort: 'path' %}
+        {% assign first_guide = true %}
+        {% for p in all_pages %}
+        {% if p.path contains 'guide/' and p.path contains '.md' %}
+        {% unless first_guide %},{% endunless %}
+        {
+          "path": {{ p.path | jsonify }},
+          "url": {{ p.url | relative_url | jsonify }},
+          "title": {{ p.title | default: p.name | replace: '.md', '' | jsonify }}
+        }
+        {% assign first_guide = false %}
+        {% endif %}
+        {% endfor %}
+      ]
+    }
   </script>
   <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </body>
