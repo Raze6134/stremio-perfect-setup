@@ -384,6 +384,8 @@
     saveGuideCompletionState();
   }
 
+  var guideCompletionCountObserver = null;
+
   function animateGuideCompletionCount(node, target, duration) {
     var prefersReducedMotion = window.matchMedia &&
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -393,11 +395,10 @@
 
     if (prefersReducedMotion) {
       node.textContent = formatNumber(target);
-      node.setAttribute("data-guide-count-current", String(target));
       return;
     }
 
-    var start = asNonNegativeInteger(node.getAttribute("data-guide-count-current"));
+    var start = 0;
     var startTime = window.performance && window.performance.now
       ? window.performance.now()
       : Date.now();
@@ -406,6 +407,8 @@
       var currentTime = typeof now === "number" ? now : Date.now();
       var elapsed = currentTime - startTime;
       var progress = Math.min(elapsed / duration, 1);
+
+      // Ease-out: fast at first, slower near the final number
       var eased = 1 - Math.pow(1 - progress, 3);
       var current = Math.floor(start + (target - start) * eased);
 
@@ -415,7 +418,6 @@
         window.requestAnimationFrame(frame);
       } else {
         node.textContent = formatNumber(target);
-        node.setAttribute("data-guide-count-current", String(target));
       }
     }
 
@@ -423,8 +425,35 @@
       window.requestAnimationFrame(frame);
     } else {
       node.textContent = formatNumber(target);
-      node.setAttribute("data-guide-count-current", String(target));
     }
+  }
+
+  function setupGuideCompletionCountObserver() {
+    if (guideCompletionCountObserver || typeof window.IntersectionObserver !== "function") {
+      return;
+    }
+
+    guideCompletionCountObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var node = entry.target;
+
+        if (entry.isIntersecting) {
+          if (node.getAttribute("data-guide-count-visible") === "true") return;
+
+          node.setAttribute("data-guide-count-visible", "true");
+
+          var target = asNonNegativeInteger(
+            node.getAttribute("data-guide-count-target")
+          );
+
+          animateGuideCompletionCount(node, target, 1400);
+        } else {
+          node.setAttribute("data-guide-count-visible", "false");
+        }
+      });
+    }, {
+      threshold: 0.5
+    });
   }
 
   function applyGuideCompletionCount(total, updatedAt, animate) {
@@ -434,15 +463,24 @@
     var value = asNonNegativeInteger(total);
 
     Array.prototype.forEach.call(nodes, function (node) {
-      if (animate) {
-        animateGuideCompletionCount(node, value, 1400);
-      } else {
-        node.textContent = formatNumber(value);
-        node.setAttribute("data-guide-count-current", String(value));
-      }
+      node.setAttribute("data-guide-count-target", String(value));
 
       if (updatedAt) {
         node.setAttribute("title", "Updated " + updatedAt);
+      }
+
+      if (!animate) {
+        node.textContent = formatNumber(value);
+        return;
+      }
+
+      setupGuideCompletionCountObserver();
+
+      if (guideCompletionCountObserver) {
+        guideCompletionCountObserver.observe(node);
+      } else {
+        // Fallback for older browsers
+        animateGuideCompletionCount(node, value, 1400);
       }
     });
   }
