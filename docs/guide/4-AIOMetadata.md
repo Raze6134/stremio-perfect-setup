@@ -40,6 +40,7 @@ Select an **AIOMetadata** instance from [**this**](https://uptime.ibbylabs.dev/a
       * **🏰 Studios**: Catalogs grouped by well-known studios or franchises (Disabled initially for *Stremio*).
       * **🎥 Decades**: Titles grouped by release decade and era.
       * **🕒 Runtime**: Titles filtered by length, from short watches to longer sessions.
+      * **🌍 World**: International titles grouped by country or language.
 
    ![Trakt Integration](../images/4.4.png)
 

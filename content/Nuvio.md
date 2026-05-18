@@ -36,6 +36,7 @@ This collections pack is based the *AIOMetadata* catalogs included in the guide
 * **🏰 Studios**: Catalogs grouped by well-known studios or franchises.
 * **🎥 Decades**: Titles grouped by release decade and era.
 * **🕒 Runtime**: Titles filtered by length, from short watches to longer sessions.
+* **🌍 World**: International titles grouped by country or language.
 
 The cool part is the **Dynamic Backdrops**: Something you would probably not notice at first glance, but what happens is that every month, the backdrops for all the catalogs included in my collections get regenerated with the most current titles the catalogs actually contain. This all happens automatically if you import my *AIOMetadata catalogs* and my *collections JSON* directly from my repo, as instructed further below, or you configure your collections to point to the image URLs from my repo, so that they get refreshed automatically. That's it!
 

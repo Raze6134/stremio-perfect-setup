@@ -198,6 +198,7 @@ Select an **AIOMetadata** instance from [**this**](https://uptime.ibbylabs.dev/#
       * **🏰 Studios**: Catalogs grouped by well-known studios or franchises (Disabled).
       * **🎥 Decades**: Titles grouped by release decade and era.
       * **🕒 Runtime**: Titles filtered by length, from short watches to longer sessions.
+      * **🌍 World**: International titles grouped by country or language.
    * *If you want some ready-to-use and well-maintained lists, while on the Trakt tab, search for the lists from user "snoak", and you will be able to import a lot of interesting lists. I have already included some of them in the catalog, but you can add more.*
    * **For Anime users**: *If you want to enable search for Anime, make sure to go to to the "Search" tab and enable both "Anime Search Engine" switches.*
    * **For other languages**: *If you want the metadata (descriptions, titles, etc.) to show in a different language than English, go to the "General" tab and change the "Display Language".*
